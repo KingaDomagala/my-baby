@@ -1,0 +1,14 @@
+# env
+.env.local
+.env
+
+# next
+.next/
+out/
+generated/
+
+# deps
+node_modules/
+
+# mac
+.DS_Store
