@@ -74,12 +74,12 @@ export type SendMailActionState = {
     name?: string;
     email?: string;
     message?: string;
-    consent?: string; 
+    consent?: string;
   };
   formData?: {
     name?: string;
     email?: string;
     message?: string;
-    consent?: boolean; 
+    consent?: boolean;
   };
 } | null;
