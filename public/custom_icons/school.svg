@@ -1,0 +1,24 @@
+<svg width="24" height="32" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- open book pages -->
+  <path d="M0 4C0 2.343 1.343 1 3 1H10C11.657 1 13 2.343 13 4V31H3C1.343 31 0 29.657 0 28V4Z" fill="#B9C4A7"></path>
+  <path d="M24 4C24 2.343 22.657 1 21 1H14C12.343 1 11 2.343 11 4V31H21C22.657 31 24 29.657 24 28V4Z" fill="#B9C4A7"></path>
+
+  <!-- page shadow -->
+  <path d="M13 4V31H11V4C11 2.343 12.343 1 14 1H15C13.895 1 13 2.343 13 4Z" fill="#9BA58B" opacity="0.35"></path>
+
+  <!-- center fold -->
+  <path d="M12 3V32" stroke="#9BA58B" stroke-width="1.6" stroke-linecap="round" opacity="0.6"></path>
+
+  <!-- text lines left -->
+  <rect x="3" y="8" width="6" height="1.6" rx="0.8" fill="#9BA58B" opacity="0.6"></rect>
+  <rect x="3" y="12" width="7" height="1.6" rx="0.8" fill="#9BA58B" opacity="0.6"></rect>
+  <rect x="3" y="16" width="5.5" height="1.6" rx="0.8" fill="#9BA58B" opacity="0.6"></rect>
+
+  <!-- text lines right -->
+  <rect x="14" y="8" width="6.5" height="1.6" rx="0.8" fill="#9BA58B" opacity="0.6"></rect>
+  <rect x="14" y="12" width="5.5" height="1.6" rx="0.8" fill="#9BA58B" opacity="0.6"></rect>
+  <rect x="14" y="16" width="7" height="1.6" rx="0.8" fill="#9BA58B" opacity="0.6"></rect>
+
+  <!-- tiny heart detail -->
+  <path d="M12 21.4C12 20.8 12.55 20.45 13.1 20.45C13.65 20.45 14.1 20.9 14.1 21.45C14.1 21.88 13.84 22.24 13.43 22.56L12 23.7L10.57 22.56C10.16 22.24 9.9 21.88 9.9 21.45C9.9 20.9 10.35 20.45 10.9 20.45C11.45 20.45 12 20.8 12 21.4Z" fill="#C9D2BA" opacity="0.95"></path>
+</svg>
