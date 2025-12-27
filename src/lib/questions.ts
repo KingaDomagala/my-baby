@@ -17,7 +17,7 @@ export const data: TCategory[] = [
     category_title: "Narodziny dziecka",
     category_description:
       "Najważniejsze szczegóły i wspomnienia z dnia, w którym wszystko się zmieniło.",
-    category_icon: "/birth.svg",
+    category_icon: "birth.svg",
     questions: [
       {
         question_key: "birth_1",
@@ -46,7 +46,7 @@ export const data: TCategory[] = [
     category_title: "Pierwsze chwile",
     category_description:
       "Zapisz pierwsze spojrzenia, emocje i momenty, które rozpoczęły Waszą wspólną historię.",
-    category_icon: "/first_moments.svg",
+    category_icon: "first_moments.svg",
     questions: [
       {
         question_key: "first_moments_1",
@@ -75,7 +75,7 @@ export const data: TCategory[] = [
     category_title: "Pierwsze dni razem",
     category_description:
       "Pierwsze noce, rytm dnia i drobne chwile, które budowały bliskość.",
-    category_icon: "/first_days_together.svg",
+    category_icon: "first_days_together.svg",
     questions: [
       {
         question_key: "first_days_together_1",
@@ -104,7 +104,7 @@ export const data: TCategory[] = [
     category_title: "Rozwój i codzienność",
     category_description:
       "Sen, karmienie, rytuały - codzienność, która z czasem staje się najcenniejszym wspomnieniem.",
-    category_icon: "/development_and_routine.svg",
+    category_icon: "development_and_routine.svg",
     questions: [
       {
         question_key: "development_and_routine_1",
@@ -133,7 +133,7 @@ export const data: TCategory[] = [
     category_title: "Pierwsze uśmiechy i reakcje",
     category_description:
       "Te małe sygnały były wielką wiadomością: rozpoznaje Cię i jest z Tobą bezpiecznie.",
-    category_icon: "/first_smiles_and_reactions.svg",
+    category_icon: "first_smiles_and_reactions.svg",
     questions: [
       {
         question_key: "first_smiles_and_reactions_1",
@@ -162,7 +162,7 @@ export const data: TCategory[] = [
     category_title: "Zdrowie i wizyty lekarskie",
     category_description:
       "Ważne daty, wizyty i kamienie milowe - wszystko, co warto mieć w jednym miejscu.",
-    category_icon: "/health_and_visits.svg",
+    category_icon: "health_and_visits.svg",
     questions: [
       {
         question_key: "health_and_visits_1",
@@ -191,7 +191,7 @@ export const data: TCategory[] = [
     category_title: "Nasza rodzina i bliscy",
     category_description:
       "Ludzie, którzy byli obok od początku - ich reakcje, wsparcie i wspólne chwile.",
-    category_icon: "/family.svg",
+    category_icon: "family.svg",
     questions: [
       {
         question_key: "family_1",
