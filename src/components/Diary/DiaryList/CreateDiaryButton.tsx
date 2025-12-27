@@ -40,7 +40,7 @@ const CreateDiaryButton = () => {
                 <DialogHeader>
                     <DialogTitle>Utwórz nowy dziennik</DialogTitle>
                     <DialogDescription>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+                        Każdy dziennik to osobna historia. Zacznij ją tworzyć już teraz.
                     </DialogDescription>
                 </DialogHeader>
 
