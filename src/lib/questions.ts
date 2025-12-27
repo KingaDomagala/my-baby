@@ -307,7 +307,7 @@ export const data: TCategory[] = [
     category_title: "Osiągnięcia i wyzwania",
     category_description:
       "Sukcesy, trudniejsze dni i ważne rozmowy - wszystko, co buduje charakter.",
-    category_icon: "/achievements_and_challenges.svg",
+    category_icon: "achievements_and_challenges.svg",
     questions: [
       {
         question_key: "achievements_and_challenges_1",
@@ -336,7 +336,7 @@ export const data: TCategory[] = [
     category_title: "Emocje dziecka",
     category_description:
       "Radości, smutki i lęki - uczucia, które warto zauważyć i zapamiętać.",
-    category_icon: "/child_emotions.svg",
+    category_icon: "child_emotions.svg",
     questions: [
       {
         question_key: "child_emotions_1",

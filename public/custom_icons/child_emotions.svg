@@ -1,0 +1,24 @@
+<svg width="24" height="32" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- head -->
+  <path d="M12 1C17.8 1 22.5 5.7 22.5 11.5C22.5 17.3 17.8 22 12 22C6.2 22 1.5 17.3 1.5 11.5C1.5 5.7 6.2 1 12 1Z" fill="#B9C4A7"></path>
+
+  <!-- hair curl -->
+  <path d="M11 3.5C9.5 3.5 9 4.8 10.2 5.3C11.2 5.7 12.3 6.6 11.6 7.8" stroke="#9BA58B" stroke-width="1.6" stroke-linecap="round"></path>
+
+  <!-- eyes -->
+  <circle cx="9" cy="11" r="1.1" fill="#9BA58B"></circle>
+  <circle cx="15" cy="11" r="1.1" fill="#9BA58B"></circle>
+
+  <!-- smile -->
+  <path d="M9 14C10.2 15.4 11.3 16 12 16C12.7 16 13.8 15.4 15 14" stroke="#9BA58B" stroke-width="1.8" stroke-linecap="round"></path>
+
+  <!-- cheeks -->
+  <circle cx="6.8" cy="13.5" r="1.2" fill="#C9D2BA" opacity="0.7"></circle>
+  <circle cx="17.2" cy="13.5" r="1.2" fill="#C9D2BA" opacity="0.7"></circle>
+
+  <!-- body -->
+  <path d="M5 24C5 21.8 6.8 20 9 20H15C17.2 20 19 21.8 19 24V32H5V24Z" fill="#9BA58B"></path>
+
+  <!-- heart on shirt -->
+  <path d="M12 24.8C12 24.1 12.7 23.7 13.4 23.7C14.1 23.7 14.6 24.2 14.6 24.9C14.6 25.4 14.3 25.9 13.8 26.3L12 27.8L10.2 26.3C9.7 25.9 9.4 25.4 9.4 24.9C9.4 24.2 9.9 23.7 10.6 23.7C11.3 23.7 12 24.1 12 24.8Z" fill="#C9D2BA"></path>
+</svg>

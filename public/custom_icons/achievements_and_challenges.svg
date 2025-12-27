@@ -1,0 +1,19 @@
+<svg width="24" height="32" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- ribbon loop -->
+  <path d="M7 0H17V8C17 9.1 16.1 10 15 10H9C7.9 10 7 9.1 7 8V0Z" fill="#9BA58B" opacity="0.6"></path>
+
+  <!-- ribbon cut -->
+  <path d="M7 6L12 11L17 6" stroke="#C9D2BA" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+
+  <!-- medal body -->
+  <circle cx="12" cy="22" r="10" fill="#B9C4A7"></circle>
+
+  <!-- inner ring -->
+  <circle cx="12" cy="22" r="6.5" fill="none" stroke="#9BA58B" stroke-width="2" opacity="0.6"></circle>
+
+  <!-- number 1 -->
+  <path d="M11.5 18.5L12.5 17V27" stroke="#9BA58B" stroke-width="2" stroke-linecap="round"></path>
+
+  <!-- small highlight -->
+  <path d="M7 18C7.8 16.4 9.4 15.4 11.2 15.2" stroke="#C9D2BA" stroke-width="1.6" stroke-linecap="round" opacity="0.8"></path>
+</svg>
