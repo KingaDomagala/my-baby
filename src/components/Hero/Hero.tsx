@@ -10,7 +10,7 @@ const Hero = () => {
                 <div className="grid items-center grid-cols-1 lg:grid-cols-2 gap-8 pt-8 pb-16 lg:py-16 xl:pt-8 xl:pb-0">
                     <div>
                         <h1 className="text-4xl lg:text-[56px] leading-[120%] mb-6 text-dark -tracking-[0.06em] max-w-[580px]">Stwórz <span className="text-secondary font-secondary">wyjątkowy</span> dziennik wspomnień dla swojego dziecka</h1>
-                        <p className="font-light leading-[150%] mb-9 max-w-[580px]">Zbieraj najważniejsze chwile z życia swojego dziecka w jednym miejscu. Dodawaj zdjęcia, zapisuj myśli i emocje. Wracaj do wspomnień, które z czasem nabierają jeszcze większej wartości.</p>
+                        <p className="font-light leading-[150%] mb-9 max-w-[580px]">Zbieraj najważniejsze chwile z życia swojego dziecka w jednym miejscu. Dodawaj zdjęcia, zapisuj myśli i emocje. Wracaj do wspomnień, które nabierają wartości.</p>
                         <div className="flex flex-col md:flex-row items-center gap-4">
                             <Button asChild className="w-full md:w-auto">
                                 <Link href="/dziennik">

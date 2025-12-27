@@ -15,7 +15,7 @@ const StartDiary = () => {
             <div className="container mx-auto px-4 grid-one-row-one-column relative z-20 pt-8 sm:py-12 lg:py-24">
                 <div className="flex flex-col">
                     <h2 className="text-[32px] md:text-[40px] leading-[120%] mb-4 md:mb-8 text-light-grey -tracking-[0.06em]">Zacznij <span className="font-secondary">przygodę</span> z dziennikiem</h2>
-                    <p className="text-base leading-[150%] font-light mb-8 text-light-grey max-w-[650px]">Nie musisz czekać na idealny moment. Każdy dzień to nowa opowieść - zapisana myśl, zdjęcie z telefonu, krótka notatka o tym, co było ważne właśnie dziś. Stwórz miejsce, które zachowa te chwile na dłużej.</p>
+                    <p className="text-base leading-[150%] font-light mb-8 text-light-grey max-w-[650px]">Nie musisz czekać na idealny moment. Każdy dzień to nowa opowieść, zapisana myśl, zdjęcie z telefonu, krótka notatka o tym, co było ważne właśnie dziś. Stwórz miejsce, które zachowa te chwile na dłużej.</p>
                     <Button asChild variant="outline" className="w-fit border-white text-white">
                         <Link href="/dziennik">
                             Dowiedz się więcej
