@@ -59,9 +59,9 @@ const verifySession = async () => {
     const now = Math.floor(Date.now() / 1000);
     const timeUntilExpiry = (exp - now) * 1000;
 
-    if (timeUntilExpiry < REFRESH_THRESHOLD) {
-        await createSession(session.userId as string);
-    }
+//   if (timeUntilExpiry < REFRESH_THRESHOLD) {
+//       await createSession(session.userId as string);
+//   }
 
     return session.userId as string;
 }
