@@ -220,7 +220,7 @@ export const data: TCategory[] = [
     category_title: "Relacje i więzi",
     category_description:
       "Bliskość budowana każdego dnia - relacje, które kształtują dzieciństwo.",
-    category_icon: "/relationships_and_bonds.svg",
+    category_icon: "relationships_and_bonds.svg",
     questions: [
       {
         question_key: "relationships_and_bonds_1",
@@ -249,7 +249,7 @@ export const data: TCategory[] = [
     category_title: "Małe wielkie wydarzenia",
     category_description:
       "Pierwsze razy i przełomowe chwile, które zostają w sercu na długo.",
-    category_icon: "/small_big_milestones.svg",
+    category_icon: "small_big_milestones.svg",
     questions: [
       {
         question_key: "small_big_milestones_1",
@@ -365,7 +365,7 @@ export const data: TCategory[] = [
     category_title: "Listy od rodziców",
     category_description:
       "Kilka słów od serca - listy, do których można wrócić po latach.",
-    category_icon: "/letters_from_parents.svg",
+    category_icon: "letters_from_parents.svg",
     questions: [
       {
         question_key: "letters_from_parents_1",
