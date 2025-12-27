@@ -12,7 +12,6 @@ export type TCategory = {
 }
 
 export const data: TCategory[] = [
-    // 🍼 1. Początek życia
     {
         category_key: "first_moments",
         category_title: "Pierwsze chwile",
@@ -53,7 +52,7 @@ export const data: TCategory[] = [
             },
             {
                 question_key: "birth_2",
-                question_title: "Jakie były waga i wzrost dziecka w dniu narodzin?",
+                question_title: "Jaka była waga i wzrost dziecka w dniu narodzin?",
             },
             {
                 question_key: "birth_3",
@@ -97,8 +96,6 @@ export const data: TCategory[] = [
             },
         ]
     },
-
-    // 👶 2. Niemowlę (0–12 miesięcy)
     {
         category_key: "first_smiles_and_reactions",
         category_title: "Pierwsze uśmiechy i reakcje",
@@ -111,7 +108,7 @@ export const data: TCategory[] = [
             },
             {
                 question_key: "first_smiles_and_reactions_2",
-                question_title: "Na co dziecko reagowało najbardziej (głos, muzyka, twarz)?",
+                question_title: "Na co dziecko reagowało najbardziej (głos, muzyka, uśmiech)?",
             },
             {
                 question_key: "first_smiles_and_reactions_3",
@@ -130,7 +127,7 @@ export const data: TCategory[] = [
     {
         category_key: "development_and_routine",
         category_title: "Rozwój i codzienność",
-        category_description: "Sen, karmienie, rytuały – codzienność, która z czasem staje się najcenniejszym wspomnieniem.",
+        category_description: "Sen, karmienie, rytuały - codzienność, która z czasem staje się najcenniejszym wspomnieniem.",
         category_icon: "/development_and_routine.svg",
         questions: [
             {
@@ -158,7 +155,7 @@ export const data: TCategory[] = [
     {
         category_key: "first_words_and_steps",
         category_title: "Pierwsze słowa i kroki",
-        category_description: "Pierwsze dźwięki, słowa i kroki – małe kroki ku wielkim zmianom.",
+        category_description: "Pierwsze dźwięki, słowa i kroki - małe kroki ku wielkim zmianom.",
         category_icon: "/first_words_and_steps.svg",
         questions: [
             {
@@ -186,7 +183,7 @@ export const data: TCategory[] = [
     {
         category_key: "health_and_visits",
         category_title: "Zdrowie i wizyty lekarskie",
-        category_description: "Ważne daty, wizyty i kamienie milowe – wszystko, co warto mieć w jednym miejscu.",
+        category_description: "Ważne daty, wizyty i kamienie milowe - wszystko, co warto mieć w jednym miejscu.",
         category_icon: "/health_and_visits.svg",
         questions: [
             {
@@ -239,12 +236,10 @@ export const data: TCategory[] = [
             },
         ]
     },
-
-    // 👨‍👩‍👧 3. Rodzina i relacje
     {
         category_key: "family",
         category_title: "Nasza rodzina i bliscy",
-        category_description: "Ludzie, którzy byli obok od początku – ich reakcje, wsparcie i wspólne chwile.",
+        category_description: "Ludzie, którzy byli obok od początku - ich reakcje, wsparcie i wspólne chwile.",
         category_icon: "/family.svg",
         questions: [
             {
@@ -272,7 +267,7 @@ export const data: TCategory[] = [
     {
         category_key: "relationships_and_bonds",
         category_title: "Relacje i więzi",
-        category_description: "Bliskość budowana każdego dnia – relacje, które kształtują dzieciństwo.",
+        category_description: "Bliskość budowana każdego dnia - relacje, które kształtują dzieciństwo.",
         category_icon: "/relationships_and_bonds.svg",
         questions: [
             {
@@ -325,8 +320,6 @@ export const data: TCategory[] = [
             },
         ]
     },
-
-    // 🌍 4. Odkrywanie świata
     {
         category_key: "trips",
         category_title: "Pierwsze podróże",
@@ -358,7 +351,7 @@ export const data: TCategory[] = [
     {
         category_key: "favorite_places",
         category_title: "Ulubione miejsca",
-        category_description: "Dom, plac zabaw, wakacje – miejsca, do których wraca się w myślach najczęściej.",
+        category_description: "Dom, plac zabaw, wakacje - miejsca, do których wraca się w myślach najczęściej.",
         category_icon: "/favorite_places.svg",
         questions: [
             {
@@ -411,8 +404,6 @@ export const data: TCategory[] = [
             },
         ]
     },
-
-    // 🎉 5. Święta i wyjątkowe dni
     {
         category_key: "holidays",
         category_title: "Pierwsze święta i urodziny",
@@ -497,12 +488,10 @@ export const data: TCategory[] = [
             },
         ]
     },
-
-    // 🎒 6. Przedszkole i szkoła
     {
         category_key: "kindergarten_first_days",
         category_title: "Pierwsze dni w przedszkolu",
-        category_description: "Nowe miejsce, nowe emocje – adaptacja i pierwsze doświadczenia w przedszkolu.",
+        category_description: "Nowe miejsce, nowe emocje - adaptacja i pierwsze doświadczenia w przedszkolu.",
         category_icon: "/kindergarten_first_days.svg",
         questions: [
             {
@@ -558,7 +547,7 @@ export const data: TCategory[] = [
     {
         category_key: "achievements_and_challenges",
         category_title: "Osiągnięcia i wyzwania",
-        category_description: "Sukcesy, trudniejsze dni i ważne rozmowy – wszystko, co buduje charakter.",
+        category_description: "Sukcesy, trudniejsze dni i ważne rozmowy - wszystko, co buduje charakter.",
         category_icon: "/achievements_and_challenges.svg",
         questions: [
             {
@@ -583,12 +572,10 @@ export const data: TCategory[] = [
             },
         ]
     },
-
-    // ❤️ 7. Myśli, emocje i wspomnienia
     {
         category_key: "child_emotions",
         category_title: "Emocje dziecka",
-        category_description: "Radości, smutki i lęki – uczucia, które warto zauważyć i zapamiętać.",
+        category_description: "Radości, smutki i lęki - uczucia, które warto zauważyć i zapamiętać.",
         category_icon: "/child_emotions.svg",
         questions: [
             {
@@ -644,7 +631,7 @@ export const data: TCategory[] = [
     {
         category_key: "letters_from_parents",
         category_title: "Listy od rodziców",
-        category_description: "Kilka słów od serca – listy, do których można wrócić po latach.",
+        category_description: "Kilka słów od serca - listy, do których można wrócić po latach.",
         category_icon: "/letters_from_parents.svg",
         questions: [
             {
@@ -669,12 +656,10 @@ export const data: TCategory[] = [
             },
         ]
     },
-
-    // 📚 8. Wspomnienia na przyszłość
     {
         category_key: "dreams_and_plans",
         category_title: "Marzenia i plany",
-        category_description: "Małe i duże marzenia – zapisane, by kiedyś do nich wrócić.",
+        category_description: "Małe i duże marzenia - zapisane, by kiedyś do nich wrócić.",
         category_icon: "/dreams_and_plans.svg",
         questions: [
             {
