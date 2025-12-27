@@ -8,7 +8,7 @@ const AboutTop = () => {
             <div className="container mx-auto px-4 py-8 lg:pt-16 lg:pb-0">
                 <Badge className="mb-4">O nas</Badge>
                 <h1 className="text-[32px] md:text-[40px] leading-[120%] mb-8 text-dark -tracking-[0.06em]">Dlaczego nasz <br className="sm:hidden"/> <span className="text-secondary font-secondary">dziennik</span> jest tak wyjątkowy?</h1>
-                <p className="text-base leading-[150%] font-light mb-8 lg:mb-20 max-w-[490px]">Zachowaj najpiękniejsze wspomnienia – zapisuj ważne chwile i dodawaj zdjęcia, by stworzyć wyjątkową pamiątkę na lata.</p>
+                <p className="text-base leading-[150%] font-light mb-8 lg:mb-20 max-w-[490px]">Zachowaj najpiękniejsze wspomnienia - zapisuj ważne chwile i dodawaj zdjęcia, by stworzyć wyjątkową pamiątkę na lata.</p>
                 <BorderImage 
                 src="/images/about.png" 
                 alt="O nas" 

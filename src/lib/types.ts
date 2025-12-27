@@ -68,11 +68,18 @@ export type DiscoverDiaryList = {
 
 // Send Mail
 export type SendMailActionState = {
-    success?: boolean;
-    errors?: {
-        general?: string;
-        name?: string;
-        email?: string;
-        message?: string;
-    }
+  success?: boolean;
+  errors?: {
+    general?: string;
+    name?: string;
+    email?: string;
+    message?: string;
+    consent?: string; 
+  };
+  formData?: {
+    name?: string;
+    email?: string;
+    message?: string;
+    consent?: boolean; 
+  };
 } | null;
