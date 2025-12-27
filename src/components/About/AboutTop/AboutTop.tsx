@@ -26,7 +26,7 @@ const AboutTopDecorations = () => {
     return (
         <>
             <Image src="/decoration/star.png" alt="" width={57} height={53} className="absolute w-[41px] h-[38px] top-[3%] right-[20%] lg:w-[57px] lg:h-[53px] lg:top-[3%] lg:right-[5%]" />
-            <Image src="/decoration/cloud.png" alt="" width={289} height={183} className="absolute w-[200px] h-[120px] top-[8%] right-[-25%] sm:top-[-2%] sm:right-[-20%] md:top-0 md:right-[-10%] lg:top-[15%] lg:right-[-5%] lg:w-[289px] lg:h-[183px]" />
+            <Image src="/decoration/cloud.png" alt="" width={289} height={183} className="absolute w-[150px] h-[80px] top-[17%] right-[2%] sm:top-[-2%] sm:right-[-20%] md:top-0 md:right-[-10%] lg:top-[15%] lg:right-[-5%] lg:w-[289px] lg:h-[183px]" />
             <Image src="/decoration/star.png" alt="" width={57} height={53} className="absolute hidden lg:block lg:top-[25%] lg:right-[30%]" />
         </>
     );
