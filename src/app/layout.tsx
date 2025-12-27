@@ -16,10 +16,48 @@ const playwrite = Playwrite_US_Trad({
   weight: ["400"],
 });
 
+const SITE_URL = "https://my-baby.pl";
+const SITE_NAME = "My Baby";
+const TITLE = "Wyjątkowy dziennik wspomnień | My Baby";
+const DESCRIPTION =
+  "Zachowaj najpiękniejsze wspomnienia – zapisuj ważne chwile i dodawaj zdjęcia, by stworzyć wyjątkową pamiątkę na lata.";
+
 export const metadata: Metadata = {
-  title: "Wyjątkowy dziennik wspomnień | My Baby",
-  description:
-    "Zachowaj najpiękniejsze wspomnienia – zapisuj ważne chwile i dodawaj zdjęcia, by stworzyć wyjątkową pamiątkę na lata.",
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
+
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    type: "website",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: TITLE,
+    description: DESCRIPTION,
+    locale: "pl_PL",
+    images: [
+      {
+        url: "/og.jpg", 
+        width: 1200,
+        height: 630,
+        alt: "My Baby – dziennik wspomnień",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/og.jpg"],
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -31,10 +69,10 @@ export default function RootLayout({
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "My Baby",
-  "url": "https://my-baby.pl",
-  "logo": "https://my-baby.pl/logo.png",
-  "description": "Wyjątkowy dziennik wspomnień – zapisuj ważne chwile i dodawaj zdjęcia, by stworzyć pamiątkę na lata.",
+  "name": "${SITE_NAME}",
+  "url": "${SITE_URL}",
+  "logo": "${SITE_URL}/logo.svg",
+  "description": "${DESCRIPTION}",
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "customer support",
@@ -48,9 +86,9 @@ export default function RootLayout({
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "My Baby",
-  "url": "https://my-baby.pl",
-  "inLanguage": "pl"
+  "name": "${SITE_NAME}",
+  "url": "${SITE_URL}",
+  "inLanguage": "pl-PL"
 }
 `.trim();
 
