@@ -1,20 +1,20 @@
 <svg width="24" height="32" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- body (touches all sides: no empty margin) -->
+  <!-- calendar card (fills the whole icon area) -->
   <rect x="0" y="0" width="24" height="32" rx="5" fill="#B9C4A7"></rect>
-  <!-- header bar -->
-  <path d="M0 9C0 6.239 2.239 4 5 4H19C21.761 4 24 6.239 24 9V11H0V9Z" fill="#9BA58B" opacity="0.55"></path>
+
+  <!-- top header -->
+  <path d="M0 6C0 3.239 2.239 1 5 1H19C21.761 1 24 3.239 24 6V12H0V6Z" fill="#9BA58B" opacity="0.55"></path>
+
   <!-- rings -->
-  <rect x="6" y="2" width="3" height="6" rx="1.5" fill="#9BA58B"></rect>
-  <rect x="15" y="2" width="3" height="6" rx="1.5" fill="#9BA58B"></rect>
+  <rect x="5" y="0" width="3" height="7" rx="1.5" fill="#9BA58B"></rect>
+  <rect x="16" y="0" width="3" height="7" rx="1.5" fill="#9BA58B"></rect>
 
-  <!-- grid dots -->
-  <circle cx="7" cy="16" r="1.2" fill="#9BA58B" opacity="0.65"></circle>
-  <circle cx="12" cy="16" r="1.2" fill="#9BA58B" opacity="0.65"></circle>
-  <circle cx="17" cy="16" r="1.2" fill="#9BA58B" opacity="0.65"></circle>
-  <circle cx="7" cy="20" r="1.2" fill="#9BA58B" opacity="0.65"></circle>
-  <circle cx="12" cy="20" r="1.2" fill="#9BA58B" opacity="0.65"></circle>
-  <circle cx="17" cy="20" r="1.2" fill="#9BA58B" opacity="0.65"></circle>
+  <!-- date window -->
+  <rect x="4.5" y="14.5" width="15" height="14" rx="3" fill="#C9D2BA"></rect>
 
-  <!-- heart detail -->
-  <path d="M12 23.2C12 22.25 12.86 21.65 13.72 21.65C14.58 21.65 15.25 22.32 15.25 23.18C15.25 23.86 14.84 24.44 14.21 24.93L12 26.7L9.79 24.93C9.16 24.44 8.75 23.86 8.75 23.18C8.75 22.32 9.42 21.65 10.28 21.65C11.14 21.65 12 22.25 12 23.2Z" fill="#C9D2BA"></path>
+  <!-- check mark -->
+  <path d="M8 22L10.2 24.2L16 18.4" stroke="#9BA58B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"></path>
+
+  <!-- tiny heart detail -->
+  <path d="M18.2 12.3C18.2 11.65 18.78 11.25 19.36 11.25C19.94 11.25 20.4 11.71 20.4 12.29C20.4 12.75 20.13 13.14 19.7 13.47L18.2 14.67L16.7 13.47C16.27 13.14 16 12.75 16 12.29C16 11.71 16.46 11.25 17.04 11.25C17.62 11.25 18.2 11.65 18.2 12.3Z" fill="#C9D2BA" opacity="0.9"></path>
 </svg>
