@@ -44,9 +44,7 @@ const ContactForm = () => {
                 className="mt-1 h-4 w-4"
                 />
                 <Label htmlFor="consent" className="text-sm leading-relaxed cursor-pointer">
-                Wyrażam zgodę na przetwarzanie moich danych osobowych przez
-                <span className="font-medium"> MyBaby </span>
-                w celu realizacji zapytania przesłanego za pomocą formularza kontaktowego.
+                Wyrażam zgodę na przetwarzanie moich danych osobowych przez MyBaby w celu realizacji zapytania przesłanego za pomocą formularza kontaktowego.
                 </Label>
             </div>
 
