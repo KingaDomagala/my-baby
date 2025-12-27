@@ -275,7 +275,7 @@ export const data: TCategory[] = [
   },
   {
     category_key: "school",
-    category_title: "Szkoła",
+    category_title: "Szkoła i edukacja",
     category_description:
       "Pierwsze lekcje, nowe wyzwania, przyjaźnie i codzienność szkolna.",
     category_icon: "/school.svg",
