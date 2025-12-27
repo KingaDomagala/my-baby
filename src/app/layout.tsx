@@ -103,6 +103,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: websiteJsonLd }}
         />
+        <meta name="google-site-verification" content="3f7xVZFLudRKGfIfzWgJrWafp9iTTI-k8ZEMpHFd25Y" />
       </head>
 
       <body className={`${poppins.variable} ${playwrite.variable} antialiased`}>
