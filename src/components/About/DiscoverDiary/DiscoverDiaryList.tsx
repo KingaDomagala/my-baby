@@ -44,7 +44,7 @@ const DiscoverDiaryList = () => {
         {
             id: 3,
             title: <>Podsumowanie <span className="text-secondary font-secondary">dziennika</span></>,
-            description: "Przeglądaj zapisane wspomnienia, obserwuj zmiany i wracaj do ważnych momentów.",
+            description: "Przeglądaj zapisane wspomnienia, obserwuj zmiany i wracaj do ważnych momentów z życia.",
             image: "/about/discover3.png",
             alt: "Podsumowanie dziennika",
         },
