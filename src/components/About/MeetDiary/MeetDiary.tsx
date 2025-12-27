@@ -9,8 +9,8 @@ const MeetDiary = () => {
             <div className="container mx-auto px-4">
                 <div className="flex flex-col lg:items-center lg:text-center">
                     <Badge className="mb-6">Czym jest dziennik?</Badge>
-                    <h2 className="text-[32px] md:text-[40px] lg:text-[48px] leading-[120%] mb-16 text-dark -tracking-[0.06em] max-w-[550px]">Poznaj nasz wyjątkowy <span className="text-secondary font-secondary">dziennik</span> dla dzieci</h2>
-                    <p className="text-base leading-[150%] font-light mb-8 max-w-[700px]">Nasz dziennik to idealne narzędzie, które pozwala rodzicom dokumentować najważniejsze chwile w życiu ich dziecka. Dzięki możliwości dodawania zdjęć i osobistych notatek, staje się on nie tylko pamiątką, ale także źródłem radości w przyszłości.</p>
+                    <h2 className="text-[32px] md:text-[40px] lg:text-[48px] leading-[120%] mb-16 text-dark -tracking-[0.06em] max-w-[550px]">Poznaj dziennik, który <span className="text-secondary font-secondary">rośnie</span> razem z Twoim dzieckiem</h2>
+                    <p className="text-base leading-[150%] font-light mb-8 max-w-[700px]"> To przestrzeń, w której codzienne momenty zamieniają się w piękną historię. Dziennik pozwala zapisywać zarówno wielkie wydarzenia, jak i drobne chwile - pierwsze uśmiechy, nowe słowa, wspólne dni. Z czasem staje się osobistą pamiątką, do której będziecie wracać przez lata.</p>
                     <Button asChild className="w-fit">
                         <Link href="/o-nas">
                             Dowiedz się więcej
