@@ -14,7 +14,7 @@ export type TCategory = {
 export const data: TCategory[] = [
   {
     category_key: "birth",
-    category_title: "Narodziny",
+    category_title: "Narodziny dziecka",
     category_description:
       "Najważniejsze szczegóły i wspomnienia z dnia, w którym wszystko się zmieniło.",
     category_icon: "/birth.svg",
