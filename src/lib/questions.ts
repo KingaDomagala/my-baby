@@ -278,7 +278,7 @@ export const data: TCategory[] = [
     category_title: "Szkoła i edukacja",
     category_description:
       "Pierwsze lekcje, nowe wyzwania, przyjaźnie i codzienność szkolna.",
-    category_icon: "/school.svg",
+    category_icon: "school.svg",
     questions: [
       {
         question_key: "school_1",
@@ -394,7 +394,7 @@ export const data: TCategory[] = [
     category_title: "Wiadomość na dorosłość",
     category_description:
       "Słowa, które mogą stać się najpiękniejszym prezentem w przyszłości.",
-    category_icon: "/message_for_adulthood.svg",
+    category_icon: "message_for_adulthood.svg",
     questions: [
       {
         question_key: "message_for_adulthood_1",
