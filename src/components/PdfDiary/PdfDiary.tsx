@@ -1,158 +1,179 @@
-/* eslint-disable jsx-a11y/alt-text */
-
 import { Diary, DiaryEntryFile } from "../../../generated/prisma";
-import { Document, Page, Text, Image as PdfImage, StyleSheet, Font, View } from "@react-pdf/renderer";
+import { Document, Page, Text, Image, StyleSheet, Font, View } from "@react-pdf/renderer";
 import React from "react";
 import { EntryWithQuestionTitle } from "@/lib/types";
 
 Font.register({
-  family: "Roboto",
-  src: "https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/fonts/Roboto/roboto-light-webfont.ttf",
+    family: "Roboto",
+    src: 'https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/fonts/Roboto/roboto-light-webfont.ttf',
 });
 
 const styles = StyleSheet.create({
-  page: {
-    fontFamily: "Roboto",
-    backgroundColor: "#F8F3E7",
-  },
-
-  coverPage: {
-    backgroundColor: "#F8F3E7",
-    position: "relative",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 40,
-  },
-  coverTitle: {
-    fontFamily: "Roboto",
-    fontSize: 52,
-    color: "#C47F5E",
-    textAlign: "center",
-    marginBottom: 16,
-  },
-  coverSubtitle: {
-    fontFamily: "Roboto",
-    fontSize: 32,
-    color: "#262626",
-    textAlign: "center",
-  },
-
-  chapterPage: {
-    backgroundColor: "#F8F3E7",
-    paddingTop: 28,
-    paddingHorizontal: 28,
-    paddingBottom: 40,
-  },
-
-  chapterHeader: {
-    marginBottom: 18,
-  },
-  chapterNumber: {
-    fontFamily: "Roboto",
-    fontSize: 14,
-    color: "#C47F5E",
-    marginBottom: 4,
-  },
-  chapterTitle: {
-    fontFamily: "Roboto",
-    fontSize: 22,
-    color: "#262626",
-  },
-
-  // pojedyncze pytanie/odpowiedź - jedno pod drugim
-  qaBlock: {
-    marginTop: 16,
-    paddingTop: 12,
-    borderTopWidth: 1,
-    borderTopColor: "#E6D9CC",
-  },
-  questionTitle: {
-    fontFamily: "Roboto",
-    fontSize: 16,
-    color: "#262626",
-    marginBottom: 8,
-  },
-  answerText: {
-    fontFamily: "Roboto",
-    fontSize: 12,
-    color: "#262626",
-    lineHeight: 1.35,
-    marginBottom: 10,
-  },
-
-  imagesGrid: {
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: "wrap",
-  },
-  imageContainer: {
-    width: 170,
-    height: 170,
-    borderRadius: 10,
-    overflow: "hidden",
-    borderWidth: 1,
-    borderColor: "#C47F5E",
-    marginRight: 10,
-    marginBottom: 10,
-  },
-  image: {
-    width: 170,
-    height: 170,
-    objectFit: "cover",
-  },
+    page: {
+        fontFamily: "Roboto",
+        backgroundColor: "#F8F3E7",
+    },
+    coverPage: {
+      backgroundColor: '#F8F3E7',
+      position: 'relative',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    coverTitle: {
+      fontFamily: "Roboto",
+      fontSize: 52,
+      color: '#C47F5E',
+      textAlign: 'center',
+      marginBottom: 20,
+    },
+    coverSubtitle: {
+      fontFamily: "Roboto",
+      fontSize: 32,
+      color: '#262626',
+      textAlign: 'center',
+    },
+    decorationTopLeft: {
+      position: 'absolute',
+      top: -20,
+      left: -100,
+      width: 333,
+      height: 319,
+    },
+    decorationTopRight: {
+      position: 'absolute',
+      top: -20,
+      right: -37,
+      width: 187,
+      height: 186,
+    },
+    decorationBottomRight: {
+      position: 'absolute',
+      bottom: 0,
+      right: 0,
+      width: 181,
+      height: 241,
+    },
+    categoryPage: {
+      backgroundColor: '#F8F3E7',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    categoryTitle: {
+      fontFamily: "Roboto",
+      fontSize: 24,
+      color: '#C47F5E',
+      textAlign: 'center',
+      marginBottom: 20,
+    },
+    chapterNumber: {
+      fontFamily: "Roboto",
+      fontSize: 24,
+      color: '#262626',
+      textAlign: 'center',
+    },
+    categoryIcon: {
+      width: 100,
+      height: 140,
+      objectFit: 'contain',
+    },
+    questionPage: {
+      backgroundColor: '#F8F3E7',
+      padding: 20,
+    },
+    chapterInfo: {
+      fontFamily: "Roboto",
+      fontSize: 14,
+      color: '#C47F5E',
+    },
+    questionTitle: {
+      fontFamily: "Roboto",
+      fontSize: 18,
+      color: '#262626',
+      marginBottom: 10,
+    },
+    answerText: {
+      fontFamily: "Roboto",
+      fontSize: 16,
+      color: '#262626',
+      marginBottom: 20,
+    },
+    imagesGrid: {
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+      gap: 10,
+    },
+    imageContainer: {
+      width: 200,
+      height: 200,
+      borderRadius: 10,
+      overflow: 'hidden',
+      border: '1px solid #C47F5E',
+    },
+    image: {
+      width: 200,
+      height: 200,
+      objectFit: 'cover',
+    },
 });
-
-type CategoryForPdf = {
-  chapterNumber: number;
-  categoryTitle: string;
-  questions: EntryWithQuestionTitle[];
-};
 
 type PdfDiaryProps = {
   diary: Diary;
-  categories: CategoryForPdf[];
-};
+  decorations: { flower1: string, flower2: string, flower3: string };
+  categories: { chapterNumber: number, categoryTitle: string, categoryIcon: string, questions: EntryWithQuestionTitle[] }[];
+}
 
-const PdfDiary = ({ diary, categories }: PdfDiaryProps) => {
+const PdfDiary = ({ diary, decorations, categories }: PdfDiaryProps) => {
   return (
     <Document>
-      {/* OKŁADKA */}
       <Page size="A4" style={styles.coverPage}>
+        <Image src={decorations.flower3} style={styles.decorationTopLeft} />
+        <Image src={decorations.flower1} style={styles.decorationTopRight} />
+        <Image src={decorations.flower2} style={styles.decorationBottomRight} />
+        
         <Text style={styles.coverTitle}>{diary.name}</Text>
         <Text style={styles.coverSubtitle}>Dziennik wspomnień</Text>
       </Page>
-
-      {/* ROZDZIAŁY: jedna "sekcja" z pytaniami jedno pod drugim */}
       {categories.map((category) => (
-        <Page key={`chapter-${category.chapterNumber}`} size="A4" style={styles.chapterPage} wrap>
-          <View style={styles.chapterHeader}>
+        <React.Fragment key={`cat-${category.chapterNumber}`}>
+          <Page size="A4" style={styles.categoryPage}>
+            {decorations.flower3 && <Image src={decorations.flower3} style={styles.decorationTopLeft} />}
+            {decorations.flower1 && <Image src={decorations.flower1} style={styles.decorationTopRight} />}
+            {decorations.flower2 && <Image src={decorations.flower2} style={styles.decorationBottomRight} />}
+            
             <Text style={styles.chapterNumber}>Rozdział {category.chapterNumber}</Text>
-            <Text style={styles.chapterTitle}>{category.categoryTitle}</Text>
-          </View>
+            <Text style={styles.categoryTitle}>{category.categoryTitle}</Text>
+            {category.categoryIcon && <Image src={category.categoryIcon} style={styles.categoryIcon} />}
+          </Page>
 
-          {category.questions.map((entry) => (
-            <View key={entry.id} style={styles.qaBlock} wrap>
+          {category.questions.map((entry: EntryWithQuestionTitle) => (
+            <Page key={entry.id} size="A4" style={styles.questionPage}>
+              <Text style={styles.chapterInfo}>
+                Rozdział {category.chapterNumber} {category.categoryTitle}
+              </Text>
               <Text style={styles.questionTitle}>{entry.question_title}</Text>
-
-              {!!entry.text && <Text style={styles.answerText}>{entry.text}</Text>}
-
-              {!!entry.files?.length && (
+              {entry.text && <Text style={styles.answerText}>{entry.text}</Text>}
+              
+              {entry.files && entry.files.length > 0 && (
                 <View style={styles.imagesGrid}>
                   {entry.files.map((file: DiaryEntryFile, fIndex: number) => (
-                    <View key={`${entry.id}-${fIndex}`} style={styles.imageContainer}>
-                      <PdfImage src={file.url} style={styles.image} />
+                    <View key={fIndex} style={styles.imageContainer}>
+                      <Image src={file.url} style={styles.image} />
                     </View>
                   ))}
                 </View>
               )}
-            </View>
+            </Page>
           ))}
-        </Page>
+        </React.Fragment>
       ))}
     </Document>
   );
-};
+}
+
 
 export default PdfDiary;
