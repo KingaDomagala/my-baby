@@ -42,7 +42,7 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
     }
 
     let chapterNumber = 0;
-    const categories: { chapterNumber: number, categoryTitle: string, categoryIcon: string, questions: EntryWithQuestionTitle[] }[] = [];
+    const categories: { chapterNumber: number, categoryTitle: string, categoryIcon: string | null, questions: EntryWithQuestionTitle[] }[] = [];
     data.forEach(category => {
         const hasAnswers = category.questions.some(question => {
             const entry = diaryResult.diary?.entries.find(entry => entry.entryKey === question.question_key);
@@ -65,13 +65,13 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
 
         chapterNumber++;
 
-        const iconFileName = category.category_icon.replace('/', '').replace('.svg', '.png');
-        const iconDataUrl = getImageDataUrl(`custom_icons/${iconFileName}`);
+//        const iconFileName = category.category_icon.replace('/', '').replace('.svg', '.png');
+//        const iconDataUrl = getImageDataUrl(`custom_icons/${iconFileName}`);
 
         categories.push({
             chapterNumber,
             categoryTitle: category.category_title,
-            categoryIcon: iconDataUrl,
+            categoryIcon: null,
             questions,
         });
     });
