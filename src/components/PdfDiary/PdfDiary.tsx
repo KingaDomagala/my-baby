@@ -81,11 +81,9 @@ const styles = StyleSheet.create({
     height: 140,
     objectFit: "contain",
   },
-
-  // Strona z pytaniami
   questionPage: {
     backgroundColor: "#F8F3E7",
-    paddingTop: 48, // miejsce na nagłówek fixed
+    paddingTop: 48, 
     paddingHorizontal: 20,
     paddingBottom: 24,
   },
@@ -95,8 +93,6 @@ const styles = StyleSheet.create({
     color: "#C47F5E",
     marginBottom: 12,
   },
-
-  // blok jednego pytania
   questionBlock: {
     marginBottom: 18,
     paddingBottom: 14,
@@ -136,8 +132,6 @@ const styles = StyleSheet.create({
     height: 200,
     objectFit: "cover",
   },
-
-  // nagłówek fixed na każdej stronie (w obrębie Page)
   fixedHeader: {
     position: "absolute",
     top: 18,
@@ -160,7 +154,6 @@ type PdfDiaryProps = {
 const PdfDiary = ({ diary, decorations, categories }: PdfDiaryProps) => {
   return (
     <Document>
-      {/* OKŁADKA */}
       <Page size="A4" style={styles.coverPage}>
         <Image src={decorations.flower3} style={styles.decorationTopLeft} />
         <Image src={decorations.flower1} style={styles.decorationTopRight} />
@@ -170,10 +163,8 @@ const PdfDiary = ({ diary, decorations, categories }: PdfDiaryProps) => {
         <Text style={styles.coverSubtitle}>Dziennik wspomnień</Text>
       </Page>
 
-      {/* ROZDZIAŁY */}
       {categories.map((category) => (
         <React.Fragment key={`cat-${category.chapterNumber}`}>
-          {/* STRONA TYTUŁOWA ROZDZIAŁU (bez zmian) */}
           <Page size="A4" style={styles.categoryPage}>
             {decorations.flower3 && <Image src={decorations.flower3} style={styles.decorationTopLeft} />}
             {decorations.flower1 && <Image src={decorations.flower1} style={styles.decorationTopRight} />}
@@ -184,9 +175,7 @@ const PdfDiary = ({ diary, decorations, categories }: PdfDiaryProps) => {
             {category.categoryIcon && <Image src={category.categoryIcon} style={styles.categoryIcon} />}
           </Page>
 
-          {/* JEDNA(SE) STRONA(Y) NA WSZYSTKIE PYTANIA W ROZDZIALE */}
           <Page size="A4" style={styles.questionPage} wrap>
-            {/* nagłówek powtarzany na każdej stronie w obrębie tej Page */}
             <View style={styles.fixedHeader} fixed>
               <Text style={styles.chapterInfo}>
                 Rozdział {category.chapterNumber} • {category.categoryTitle}
