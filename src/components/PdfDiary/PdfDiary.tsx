@@ -1,13 +1,7 @@
+/* eslint-disable jsx-a11y/alt-text */
+
 import { Diary, DiaryEntryFile } from "../../../generated/prisma";
-import {
-  Document,
-  Page,
-  Text,
-  Image,
-  StyleSheet,
-  Font,
-  View,
-} from "@react-pdf/renderer";
+import { Document, Page, Text, Image as PdfImage, StyleSheet, Font, View } from "@react-pdf/renderer";
 import React from "react";
 import { EntryWithQuestionTitle } from "@/lib/types";
 
@@ -22,7 +16,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#F8F3E7",
   },
 
-  // COVER
   coverPage: {
     backgroundColor: "#F8F3E7",
     position: "relative",
@@ -33,211 +26,130 @@ const styles = StyleSheet.create({
     padding: 40,
   },
   coverTitle: {
+    fontFamily: "Roboto",
     fontSize: 52,
     color: "#C47F5E",
     textAlign: "center",
-    marginBottom: 20,
+    marginBottom: 16,
   },
   coverSubtitle: {
+    fontFamily: "Roboto",
     fontSize: 32,
     color: "#262626",
     textAlign: "center",
   },
 
-  decorationTopLeft: {
-    position: "absolute",
-    top: -20,
-    left: -100,
-    width: 333,
-    height: 319,
-  },
-  decorationTopRight: {
-    position: "absolute",
-    top: -20,
-    right: -37,
-    width: 187,
-    height: 186,
-  },
-  decorationBottomRight: {
-    position: "absolute",
-    bottom: 0,
-    right: 0,
-    width: 181,
-    height: 241,
+  chapterPage: {
+    backgroundColor: "#F8F3E7",
+    paddingTop: 28,
+    paddingHorizontal: 28,
+    paddingBottom: 40,
   },
 
-  // CATEGORY TITLE PAGE
-  categoryPage: {
-    backgroundColor: "#F8F3E7",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 40,
-  },
-  categoryTitle: {
-    fontSize: 24,
-    color: "#C47F5E",
-    textAlign: "center",
-    marginBottom: 20,
+  chapterHeader: {
+    marginBottom: 18,
   },
   chapterNumber: {
-    fontSize: 24,
-    color: "#262626",
-    textAlign: "center",
-    marginBottom: 10,
-  },
-  categoryIcon: {
-    width: 100,
-    height: 140,
-    objectFit: "contain",
-    marginTop: 10,
-  },
-
-  // QUESTIONS PAGE (ONE PAGE PER CATEGORY, AUTO PAGINATION)
-  questionsPage: {
-    backgroundColor: "#F8F3E7",
-    padding: 24,
-  },
-  questionsHeader: {
-    marginBottom: 16,
-    paddingBottom: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: "#C47F5E",
-    borderBottomStyle: "solid",
-  },
-  chapterInfo: {
-    fontSize: 12,
+    fontFamily: "Roboto",
+    fontSize: 14,
     color: "#C47F5E",
     marginBottom: 4,
   },
-  categoryName: {
-    fontSize: 16,
+  chapterTitle: {
+    fontFamily: "Roboto",
+    fontSize: 22,
     color: "#262626",
   },
 
-  questionBlock: {
-    marginTop: 14,
-    paddingBottom: 14,
-    borderBottomWidth: 1,
-    borderBottomColor: "rgba(196,127,94,0.25)",
-    borderBottomStyle: "solid",
+  // pojedyncze pytanie/odpowiedź - jedno pod drugim
+  qaBlock: {
+    marginTop: 16,
+    paddingTop: 12,
+    borderTopWidth: 1,
+    borderTopColor: "#E6D9CC",
   },
   questionTitle: {
-    fontSize: 14,
+    fontFamily: "Roboto",
+    fontSize: 16,
     color: "#262626",
     marginBottom: 8,
   },
   answerText: {
+    fontFamily: "Roboto",
     fontSize: 12,
     color: "#262626",
-    marginBottom: 10,
     lineHeight: 1.35,
+    marginBottom: 10,
   },
 
   imagesGrid: {
     display: "flex",
     flexDirection: "row",
     flexWrap: "wrap",
-    gap: 10,
   },
   imageContainer: {
-    width: 180,
-    height: 180,
+    width: 170,
+    height: 170,
     borderRadius: 10,
     overflow: "hidden",
     borderWidth: 1,
     borderColor: "#C47F5E",
-    borderStyle: "solid",
+    marginRight: 10,
+    marginBottom: 10,
   },
   image: {
-    width: 180,
-    height: 180,
+    width: 170,
+    height: 170,
     objectFit: "cover",
   },
 });
 
-type PdfDiaryProps = {
-  diary: Diary;
-  decorations: { flower1: string; flower2: string; flower3: string };
-  categories: {
-    chapterNumber: number;
-    categoryTitle: string;
-    categoryIcon: string; // jeśli chcesz USUNĄĆ ikony, zostaw pusty string i nic się nie wyrenderuje
-    questions: EntryWithQuestionTitle[];
-  }[];
+type CategoryForPdf = {
+  chapterNumber: number;
+  categoryTitle: string;
+  questions: EntryWithQuestionTitle[];
 };
 
-const PdfDiary = ({ diary, decorations, categories }: PdfDiaryProps) => {
+type PdfDiaryProps = {
+  diary: Diary;
+  categories: CategoryForPdf[];
+};
+
+const PdfDiary = ({ diary, categories }: PdfDiaryProps) => {
   return (
     <Document>
       {/* OKŁADKA */}
-      <Page size="A4" style={[styles.page, styles.coverPage]}>
-        {decorations.flower3 ? (
-          <Image src={decorations.flower3} style={styles.decorationTopLeft} />
-        ) : null}
-        {decorations.flower1 ? (
-          <Image src={decorations.flower1} style={styles.decorationTopRight} />
-        ) : null}
-        {decorations.flower2 ? (
-          <Image
-            src={decorations.flower2}
-            style={styles.decorationBottomRight}
-          />
-        ) : null}
-
+      <Page size="A4" style={styles.coverPage}>
         <Text style={styles.coverTitle}>{diary.name}</Text>
         <Text style={styles.coverSubtitle}>Dziennik wspomnień</Text>
       </Page>
 
-      {/* KATEGORIE */}
+      {/* ROZDZIAŁY: jedna "sekcja" z pytaniami jedno pod drugim */}
       {categories.map((category) => (
-        <React.Fragment key={category.chapterNumber}>
-          {/* STRONA TYTUŁOWA KATEGORII (ZOSTAJE JAK JEST) */}
-          <Page size="A4" style={[styles.page, styles.categoryPage]}>
-            <Text style={styles.chapterNumber}>
-              Rozdział {category.chapterNumber}
-            </Text>
-            <Text style={styles.categoryTitle}>{category.categoryTitle}</Text>
+        <Page key={`chapter-${category.chapterNumber}`} size="A4" style={styles.chapterPage} wrap>
+          <View style={styles.chapterHeader}>
+            <Text style={styles.chapterNumber}>Rozdział {category.chapterNumber}</Text>
+            <Text style={styles.chapterTitle}>{category.categoryTitle}</Text>
+          </View>
 
-            {/* Jeśli chcesz USUNĄĆ ikony w PDF: usuń ten blok albo ustaw categoryIcon = '' */}
-            {category.categoryIcon ? (
-              <Image src={category.categoryIcon} style={styles.categoryIcon} />
-            ) : null}
-          </Page>
+          {category.questions.map((entry) => (
+            <View key={entry.id} style={styles.qaBlock} wrap>
+              <Text style={styles.questionTitle}>{entry.question_title}</Text>
 
-          {/* PYTANIA: JEDEN "Page" NA CAŁĄ KATEGORIĘ (AUTO-ŁAMANIE) */}
-          <Page size="A4" style={[styles.page, styles.questionsPage]} wrap>
-            <View style={styles.questionsHeader} fixed>
-              <Text style={styles.chapterInfo}>
-                Rozdział {category.chapterNumber}
-              </Text>
-              <Text style={styles.categoryName}>{category.categoryTitle}</Text>
+              {!!entry.text && <Text style={styles.answerText}>{entry.text}</Text>}
+
+              {!!entry.files?.length && (
+                <View style={styles.imagesGrid}>
+                  {entry.files.map((file: DiaryEntryFile, fIndex: number) => (
+                    <View key={`${entry.id}-${fIndex}`} style={styles.imageContainer}>
+                      <PdfImage src={file.url} style={styles.image} />
+                    </View>
+                  ))}
+                </View>
+              )}
             </View>
-
-            {category.questions.map((entry) => (
-              <View key={entry.id} style={styles.questionBlock}>
-                <Text style={styles.questionTitle}>{entry.question_title}</Text>
-
-                {entry.text ? (
-                  <Text style={styles.answerText}>{entry.text}</Text>
-                ) : null}
-
-                {entry.files && entry.files.length > 0 ? (
-                  <View style={styles.imagesGrid}>
-                    {entry.files.map((file: DiaryEntryFile, idx: number) => (
-                      <View key={`${file.id}-${idx}`} style={styles.imageContainer}>
-                        {/* Uwaga: zakładam, że file.url masz już jako dataURL albo poprawny URL.
-                           Jeśli w PdfDiary miałeś wcześniej inną nazwę pola, dopasuj ją tutaj. */}
-                        <Image src={(file as any).url || (file as any).path} style={styles.image} />
-                      </View>
-                    ))}
-                  </View>
-                ) : null}
-              </View>
-            ))}
-          </Page>
-        </React.Fragment>
+          ))}
+        </Page>
       ))}
     </Document>
   );
